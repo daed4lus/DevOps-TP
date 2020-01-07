@@ -1,0 +1,5 @@
+export PATH=$PATH:/home/bitnami/.ebcli-virtual-env/executables/  
+mkdir $APPNAME || cd $APPNAME 
+eb init $APPNAME -p PHP -r eu-west-1 
+eb create $ENV 
+aws2 sns publish --phone-number +33637280286 --message "$APPNAME -- $ENV"
